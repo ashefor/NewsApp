@@ -1,0 +1,49 @@
+<div>
+<div class="mainheader">
+    <mat-toolbar role="heading" class="header">
+        <button mat-button class="menubtn"><mat-icon>menu</mat-icon></button>
+        <div class="nav-menu-links">
+       <a class="nav-menu-links_link" href="">Home</a>
+       <a class="nav-menu-links_link" href="">News around the globe</a>
+       <a class="nav-menu-links_link" href="">Sports</a>
+       <a class="nav-menu-links_link" href="">Entertainment</a>
+        </div>
+        <span class="example-fill-remaining-space"></span>
+        <button mat-button><mat-icon>search</mat-icon></button>
+      </mat-toolbar>
+      <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
+          <button mat-menu-item> Settings </button>
+          <button mat-menu-item> Help </button>
+        </mat-menu> -->
+</div>
+
+<cdk-virtual-scroll-viewport class="viewport" itemSize="90" >
+<div class="container">
+      <mat-card *cdkVirtualFor="let articles of nigerianArticles" class="items animated bounceInLeft">
+          <mat-card-header>
+            <mat-card-title>{{articles.title}}</mat-card-title>
+            <mat-card-subtitle>{{articles.source.name}}</mat-card-subtitle>
+          </mat-card-header>
+         
+          <mat-card-actions class="card-action-btns" >
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+            <button mat-button><a href="{{articles.url}}" target="_blank">GO TO ARTICLE</a></button>
+          </mat-card-actions>
+        </mat-card>
+
+        <div>
+            <footer style="bottom:0; margin-top: 50px">
+              <div style="display:flex">
+                  <div>
+                     <small>Michael Ashefor. 2019</small>
+                  </div>
+                  <div style="margin-left:auto">
+                      <small>Powered by <a href="https://newsapi.org/">newsapi.org</a></small>
+                  </div>
+              </div>
+            </footer>
+          </div> 
+</div>
+</cdk-virtual-scroll-viewport>
+</div>
