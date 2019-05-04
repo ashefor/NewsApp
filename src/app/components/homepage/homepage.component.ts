@@ -9,7 +9,7 @@ import { NewsapiService } from 'src/app/services/newsapi.service';
 })
 export class HomepageComponent implements OnInit {
   private allnews =[];
-  private nigerianArticles = [];
+  nigerianArticles: any[] = [];
   
   constructor(private service:NewsapiService,) { }
 
