@@ -11,7 +11,7 @@ export class SportsComponent implements OnInit {
   allSports: any[]= [];
   allSportnews: any[]= [];
   endofpage = false;
-
+  pageloader = true;
   page = 1;
 
   constructor(private service: NewsapiService) { }
