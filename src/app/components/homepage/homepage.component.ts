@@ -8,41 +8,46 @@ import { NewsapiService } from 'src/app/services/newsapi.service';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  private allnews =[];
   nigerianArticles: any[] = [];
+  page = 1;
+  color = 'primary';
+  mode = 'indeterminate';
+  pageloader = true;
+  align = "end"
   
   constructor(private service:NewsapiService,) { }
 
   ngOnInit() {
-    this.fetchNews();
     this.fetchAllNewsFromNig()
+    this.sample()
   }
 
-  fetchNews(){
-    this.service.getAllnews().subscribe((res: any)=>{
-      this.allnews = res.sources;
-      console.log(this.allnews)
-      console.log(res.status)
-    })
-  }
-  fetchAllNewsFromNig(){
-    this.service.getTopHeadlinesFromNig().subscribe((res:any)=>{
+  
+  fetchAllNewsFromNig(page = 1){
+    this.service.getTopHeadlinesFromNig(page).subscribe((res:any)=>{
       this.nigerianArticles = res.articles;
+      this.pageloader = false;
         console.log(this.nigerianArticles)
       })
   }
-  goToFirstPage(){
-    console.log('preparing to move')
-    this.service.returnFirstPage()
+  onScrollDown() {
+    this.page++;
+    this.service.getTopHeadlinesFromNig(this.page).subscribe((res: any)=>{
+      if(this.nigerianArticles.length === 90){
+        // do something. I'll come back to it
+      }
+      else{
+        this.nigerianArticles = this.nigerianArticles.concat(res.articles)
+        console.log(this.nigerianArticles)
+        console.log(this.nigerianArticles.length)
+      }
+    })
+    console.log('scrolled')
   }
-  goToSecondPage(){
-    console.log('preparing to move')
-    this.service.returnSecondPage()
+
+  sample(){
+    this.service.testapi().subscribe((res: any)=>{
+      this.nigerianArticles = res.data
+    })
   }
-  // onScroll()  
-  // {  
-  //   console.log("Scrolled");  
-  //   this.page = this.page + 1;  
-  //   this.fetchAllNewsFromNig();  
-  // }
 }

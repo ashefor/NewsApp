@@ -1,0 +1,77 @@
+<!-- <div *ngFor="let news of allnews">
+  <div>
+    {{news.category}}
+  </div>
+</div> -->
+<div id="page-container">
+    <div class="mainheader">
+      <mat-toolbar role="heading" class="header">
+        <button mat-button class="menubtn" (click)="sidenav.open()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <div class="nav-menu-links">
+          <a class="nav-menu-links_link" href="">Home</a>
+          <a class="nav-menu-links_link" href="">News around the globe</a>
+          <a class="nav-menu-links_link" href="sports">Sports</a>
+          <a class="nav-menu-links_link" href="">Entertainment</a>
+        </div>
+        <span class="example-fill-remaining-space"></span>
+        <button mat-button>
+          <mat-icon>search</mat-icon>
+        </button>
+      </mat-toolbar>
+      <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
+            <button mat-menu-item> Settings </button>
+            <button mat-menu-item> Help </button>
+          </mat-menu> -->
+    </div>
+    <mat-sidenav-container>
+        <mat-sidenav #sidenav class="sidenav">
+            <mat-nav-list role="list">
+                <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
+                <mat-list-item role="navigation"><a href="">Sports</a></mat-list-item>
+                <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
+              </mat-nav-list>
+  </mat-sidenav>
+  
+  <mat-sidenav-content>
+      <div class="container" infinite-scroll (scrolled)="onScrollDown()">
+          <div class="overlay" *ngIf="pageloader">
+            <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
+            </mat-progress-spinner>
+          </div>
+      
+          <div class="allnews">
+              <div *ngFor="let sport of allSportnews">
+                  <div>
+                    <img src="{{sport.urlToImage}}" alt="" width="400" height="250" class="responsive">
+                  </div>
+                  <div>
+                      <p>
+                          {{sport.title}}
+                        </p>
+                  </div>
+                  <div>
+                      <button>Like</button>
+                      <button>share</button>
+                  </div>
+                </div>
+          </div>
+          
+            <footer id="footer">
+              <div style="display:flex">
+                <div>
+                  <small>Michael Ashefor. 2019</small>
+                </div>
+                <div style="margin-left:auto">
+                  <small>Powered by <a href="https://newsapi.org/">newsapi.org</a></small>
+                </div>
+              </div>
+            </footer>
+        </div>
+  </mat-sidenav-content>
+        
+    </mat-sidenav-container>
+    
+  </div>
+
