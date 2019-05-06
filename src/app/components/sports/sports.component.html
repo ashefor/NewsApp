@@ -12,7 +12,7 @@
       <div class="nav-menu-links">
         <a class="nav-menu-links_link" href="">Home</a>
         <a class="nav-menu-links_link" href="">News around the globe</a>
-        <a class="nav-menu-links_link" href="sports">Sports</a>
+        <a class="nav-menu-links_link" href="/sports">Sports</a>
         <a class="nav-menu-links_link" href="">Entertainment</a>
       </div>
       <span class="example-fill-remaining-space"></span>
@@ -21,46 +21,56 @@
       </button>
     </mat-toolbar>
     <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
-            <button mat-menu-item> Settings </button>
-            <button mat-menu-item> Help </button>
-          </mat-menu> -->
+          <button mat-menu-item> Settings </button>
+          <button mat-menu-item> Help </button>
+        </mat-menu> -->
   </div>
   <mat-sidenav-container>
     <mat-sidenav #sidenav class="sidenav">
       <mat-nav-list role="list">
         <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
-        <mat-list-item role="navigation"><a href="">Sports</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
         <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
-
     <mat-sidenav-content>
       <div class="container" infinite-scroll (scrolled)="onScrollDown()">
         <div class="overlay" *ngIf="pageloader">
           <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
           </mat-progress-spinner>
         </div>
-
-        <div class="allnews">
-          <div *ngFor="let sport of allSportnews">
-            <div>
-              <img src="{{sport.urlToImage}}" alt="" width="400" height="250" class="responsive">
-            </div>
-            <div>
-              <p>
-                {{sport.title}}
-              </p>
-            </div>
-            <div>
-              <button>Like</button>
-              <button>share</button>
-            </div>
+        <div *ngFor="let sport of allSportnews" class="items">
+          <div class="news-card">
+              <div class="img-container" [ngStyle]="{'background-image': 'url('+sport.urlToImage+')'}">
+                  <!-- <img src="{{sport.urlToImage}}" alt=""  class="responsive"> -->
+                </div>
+                <div class="news-description">
+                  <div>
+                      <a href="{{sport.url}}">
+                          <p>
+                              {{sport.title}}
+                            </p>
+                      </a>
+                  </div>
+                  
+                </div>
           </div>
+          <!-- <div style="margin-top: 20px">
+              <div class="card-action-btns">
+                  <button mat-button>
+                    <mat-icon>favorite</mat-icon>
+                  </button>
+                  <button mat-button>
+                      <mat-icon>share</mat-icon>
+                    </button>
+                </div>
+          </div> -->
+        </div>
+        <div *ngIf="endofpage">
+          END!!
         </div>
       </div>
-
     </mat-sidenav-content>
-
   </mat-sidenav-container>
   <footer id="footer">
     <div style="display:flex">
@@ -72,5 +82,4 @@
       </div>
     </div>
   </footer>
-
 </div>

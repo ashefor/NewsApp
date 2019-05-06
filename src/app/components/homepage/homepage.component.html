@@ -21,49 +21,49 @@
         </mat-menu> -->
   </div>
   <mat-sidenav-container>
-      <mat-sidenav #sidenav class="sidenav">
-          <mat-nav-list role="list">
-              <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
-              <mat-list-item role="navigation"><a href="">Sports</a></mat-list-item>
-              <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
-            </mat-nav-list>
-</mat-sidenav>
+    <mat-sidenav #sidenav class="sidenav">
+      <mat-nav-list role="list">
+        <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
 
-<mat-sidenav-content>
-    <div class="container" infinite-scroll (scrolled)="onScrollDown()">
+    <mat-sidenav-content>
+      <div class="container" infinite-scroll (scrolled)="onScrollDown()">
         <div class="overlay" *ngIf="pageloader">
-          <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
+          <mat-progress-spinner class="spinner" [color]="color" [mode]="mode">
           </mat-progress-spinner>
         </div>
-    
+
         <div class="allnews">
-            <mat-card *ngFor="let articles of nigerianArticles" class="items animated bounceInLeft">
-                <mat-card-header>
-                  <mat-card-title>{{articles.first_name}}</mat-card-title>
-                  <mat-card-subtitle>{{articles.last_name}}</mat-card-subtitle>
-                </mat-card-header>
-          
-                <mat-card-actions class="card-action-btns" [align]="align">
-                  <button mat-button>LIKE</button>
-                  <button mat-button>SHARE</button>
-                  <button mat-button><a href="{{articles.url}}" target="_blank">GO TO ARTICLE</a></button>
-                </mat-card-actions>
-              </mat-card>
+          <mat-card *ngFor="let articles of nigerianArticles" class="items animated bounceInLeft">
+            <mat-card-header>
+              <mat-card-title>{{articles.title}}</mat-card-title>
+              <mat-card-subtitle>{{articles.source.name}}</mat-card-subtitle>
+            </mat-card-header>
+
+            <mat-card-actions class="card-action-btns" [align]="align">
+              <button mat-button>LIKE</button>
+              <button mat-button>SHARE</button>
+              <button mat-button><a href="{{articles.url}}" target="_blank">GO TO ARTICLE</a></button>
+            </mat-card-actions>
+          </mat-card>
         </div>
       </div>
-      
-</mat-sidenav-content>
-      
-</mat-sidenav-container>
-      <footer id="footer">
-          <div style="display:flex">
-            <div>
-              <small>Michael Ashefor. 2019</small>
-            </div>
-            <div style="margin-left:auto">
-              <small>Powered by <a href="https://newsapi.org/">newsapi.org</a></small>
-            </div>
-          </div>
-        </footer>
-  
+
+    </mat-sidenav-content>
+
+  </mat-sidenav-container>
+  <footer id="footer">
+    <div style="display:flex">
+      <div>
+        <small>Michael Ashefor. 2019</small>
+      </div>
+      <div style="margin-left:auto">
+        <small>Powered by <a href="https://newsapi.org/">newsapi.org</a></small>
+      </div>
+    </div>
+  </footer>
+
 </div>

@@ -19,7 +19,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.fetchAllNewsFromNig()
-    this.sample()
+    // this.sample()
   }
 
   
@@ -45,9 +45,9 @@ export class HomepageComponent implements OnInit {
     console.log('scrolled')
   }
 
-  sample(){
-    this.service.testapi().subscribe((res: any)=>{
-      this.nigerianArticles = res.data
-    })
-  }
+  // sample(){
+  //   this.service.testapi().subscribe((res: any)=>{
+  //     this.nigerianArticles = res.data
+  //   })
+  // }
 }

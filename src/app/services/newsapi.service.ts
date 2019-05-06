@@ -24,7 +24,7 @@ export class NewsapiService {
     return this.http.get(`${this.url}/v2/sources?category=sports&language=en&apikey=${this.apikey}`)
   }
   getAllSportsNews(page){
-    return this.http.get(`${this.url}/v2/everything?domains=foxsports.com,bleacherreport.com&pageSize=10&page=${page}&language=en&apikey=${this.apikey}`)
+    return this.http.get(`${this.url}/v2/everything?domains=foxsports.com,bleacherreport.com&pageSize=15&page=${page}&language=en&apikey=${this.apikey}`)
   }
   // returnFirstPage(){
   //   return this.http.get(`${this.url}/v2/top-headlines?country=ng&pageSize=10&page=1&apikey=${this.apikey}`)

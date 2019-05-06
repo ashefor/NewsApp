@@ -13,7 +13,9 @@ export class SportsComponent implements OnInit {
   endofpage = false;
   pageloader = true;
   page = 1;
-
+  color = 'primary';
+  mode = 'indeterminate';
+  
   constructor(private service: NewsapiService) { }
 
   ngOnInit() {
@@ -32,6 +34,7 @@ export class SportsComponent implements OnInit {
     this.service.getAllSportsNews(page).subscribe((res:any)=>{
       if(res.status === 'ok'){
         this.allSportnews = res.articles;
+        this.pageloader = false;
         // console.log(res.totalResults)
         // console.log(this.allSportnews.length)
         console.log(this.allSportnews)
