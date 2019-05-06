@@ -21,7 +21,10 @@
         </mat-menu> -->
   </div>
   <mat-sidenav-container>
-    <mat-sidenav #sidenav class="sidenav">
+    <mat-sidenav #sidenav class="sidenav" 
+    [fixedInViewport]="fixedInViewport" 
+    [fixedTopGap]="fixedTopGap"
+    [fixedBottomGap]="fixedBottomGap">
       <mat-nav-list role="list">
         <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
         <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
@@ -29,7 +32,7 @@
       </mat-nav-list>
     </mat-sidenav>
 
-    <mat-sidenav-content>
+    <mat-sidenav-content role="main">
       <div class="container" infinite-scroll (scrolled)="onScrollDown()">
         <div class="overlay" *ngIf="pageloader">
           <mat-progress-spinner class="spinner" [color]="color" [mode]="mode">

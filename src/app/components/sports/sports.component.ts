@@ -15,6 +15,9 @@ export class SportsComponent implements OnInit {
   page = 1;
   color = 'primary';
   mode = 'indeterminate';
+  fixedInViewport = true;
+  fixedTopGap = 0;
+  fixedBottomGap = 0;
   
   constructor(private service: NewsapiService) { }
 

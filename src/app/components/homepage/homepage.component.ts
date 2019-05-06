@@ -13,7 +13,11 @@ export class HomepageComponent implements OnInit {
   color = 'primary';
   mode = 'indeterminate';
   pageloader = true;
-  align = "end"
+  align = "end";
+  fixedInViewport = true;
+  fixedTopGap = 0;
+  fixedBottomGap = 0;
+
   
   constructor(private service:NewsapiService,) { }
 

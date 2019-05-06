@@ -47,10 +47,14 @@
     background: black;
     position: sticky;
     top: 0;
-    z-index:99999;
+    z-index:2;
 }
 mat-sidenav-container{
     background: transparent;
+    z-index: unset;
+}
+mat-sidenav-content{
+    margin-bottom: 50px
 }
 .mat-toolbar{
     padding: unset;
@@ -61,7 +65,7 @@ mat-sidenav-container{
     text-decoration: none;
 }
 .nav-menu-links_link {
-    border-right: 1px solid #595959;
+    border-right: 2px solid white;
     font-weight: 300;
     letter-spacing: .04em;
     line-height: 1;
