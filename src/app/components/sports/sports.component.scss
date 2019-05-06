@@ -54,7 +54,8 @@ mat-sidenav-container{
     z-index: unset;
 }
 mat-sidenav-content{
-    margin-bottom: 50px
+    margin-bottom: 50px;
+    margin-top: 50px;
 }
 .mat-toolbar{
     padding: unset;
@@ -168,5 +169,23 @@ mat-sidenav-content{
         position: absolute;
         bottom: 0;
         right: 0;
+    }
+    .spinner{
+        display:none;
+    }
+    .overlay{
+        display: none;
+    }
+    mat-sidenav-content{
+        margin-bottom: 50px;
+        margin-top: unset;
+    }
+    #footer{
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+        // position: absolute;
+        bottom: 0;
+        height: 2.5rem; 
     }
 }
