@@ -17,6 +17,8 @@ export class MainpageComponent implements OnInit {
   fixedBottomGap = 0;
   endofpage = false;
   pageloader = true;
+  color = 'primary';
+  mode = 'indeterminate';
 
   constructor(private route: ActivatedRoute, private service: NewsapiService) { }
 
@@ -30,6 +32,7 @@ export class MainpageComponent implements OnInit {
     })
     this.service.testload(this.q, this.sortedBy, this.pagecount).subscribe((res:any)=>{
       this.searcharticles = res.articles
+      this.pageloader = false;
       console.log(this.searcharticles)
     })
   }
