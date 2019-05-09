@@ -11,9 +11,13 @@
         <a class="nav-menu-links_link" href="">Entertainment</a>
       </div>
       <span class="example-fill-remaining-space"></span>
-      <button mat-button>
+      <form method="get" action="/search" accept-charset="UTF-8">
+        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search" autocomplete="off" aria-label="search">
+      </form>
+      <!-- <button mat-button type="submit">
+        <input type="text">
         <mat-icon>search</mat-icon>
-      </button>
+      </button> -->
     </mat-toolbar>
     <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
           <button mat-menu-item> Settings </button>

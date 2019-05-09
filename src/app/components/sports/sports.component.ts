@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsapiService } from 'src/app/services/newsapi.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sports',
@@ -18,12 +19,16 @@ export class SportsComponent implements OnInit {
   fixedInViewport = true;
   fixedTopGap = 0;
   fixedBottomGap = 0;
+  whattofind;
+  newsearcharray: any[] = [];
+  sortItemsBy;
   
-  constructor(private service: NewsapiService) { }
+  constructor(private service: NewsapiService, private router: Router) { }
 
   ngOnInit() {
     this.fetchNews()
     this.fetchSports()
+    // this.fetchAll()
   }
 
   fetchNews(){
@@ -61,5 +66,30 @@ export class SportsComponent implements OnInit {
     })
 
     console.log('scrolled')
+  }
+  // fetchAll(){
+  //   this.service.loadEverything(this.whattofind, this.sortItemsBy).subscribe((res:any)=>{
+  //     console.log(res)
+  //     console.log('everything')
+  //   })
+  // }
+  search(){
+    // this.service.loadEverything(this.whattofind, this.sortItemsBy).subscribe((res:any)=>{
+    //   this.allSportnews = res.articles
+    //   // console.log('everything')
+    //   console.log(this.whattofind)
+    //   console.log(this.newsearcharray);
+    //   this.router.navigate(['/search'], {queryParams: {q: this.whattofind}})
+    // })
+    this.router.navigate(['/search'], {queryParams: {q: this.whattofind, sortBy: this.sortItemsBy}})
+  }
+  onKey(event){
+    
+    this.whattofind = event.target.value;
+    // console.log(this.whattofind)
+  }
+  selectoption(event){
+    this.sortItemsBy = event.target.value;
+    console.log(this.sortItemsBy)
   }
 }

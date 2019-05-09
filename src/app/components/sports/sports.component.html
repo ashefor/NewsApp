@@ -16,9 +16,9 @@
         <a class="nav-menu-links_link" href="">Entertainment</a>
       </div>
       <span class="example-fill-remaining-space"></span>
-      <button mat-button>
-        <mat-icon>search</mat-icon>
-      </button>
+      <form method="get" action="/search" accept-charset="UTF-8">
+        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search" autocomplete="off" aria-label="search">
+      </form>
     </mat-toolbar>
     <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
           <button mat-menu-item> Settings </button>
@@ -37,6 +37,15 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content role="main">
+        <!-- <div>
+            <input #box (keyup)="onKey($event)">
+            <select name="" id="" (click)="selectoption($event)" >
+              <option value="relevancy">Relevancy</option>
+              <option value="popularity">Popularity</option>
+              <option value="publishedAt">New First</option>
+            </select>
+            <button (click)="search()" value=[whattofind]>Search</button>
+          </div> -->
       <div class="container" infinite-scroll (scrolled)="onScrollDown()">
         <div class="overlay" *ngIf="pageloader">
           <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
@@ -49,7 +58,7 @@
                 </div>
                 <div class="news-description">
                   <div>
-                      <a href="{{sport.url}}">
+                      <a href="{{sport.url}}" target="_blank">
                           <p>
                               {{sport.title}}
                             </p>

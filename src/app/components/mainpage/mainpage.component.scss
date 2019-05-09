@@ -1,40 +1,3 @@
-.overlay {
-    position:fixed;
-    display:block;
-    width:100%;
-    height:100%;
-    top:0;
-    left:0;
-    // background-color:rgba(74,74,74,.8);
-    z-index:99999;
-  }
-
-#page-container {
-    position: relative;
-    min-height: 100vh;
-  }
-  #footer {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 100%;
-    max-width: 1200px;
-    height: 2.5rem;   
-    margin-top: 50px; 
-    margin-left: auto;
-    margin-right: auto; 
-  }
-  .spinner {
-    position:absolute;
-    top:50%;
-    left:50%;
-    transform: translate(-50%,-50%);
-  }
-.example-fill-remaining-space{
-    flex: 1 1 auto;
-}
-
 .header{
     background: transparent;
     max-width: 1200px;
@@ -48,24 +11,6 @@
     position: sticky;
     top: 0;
     z-index:2;
-}
-.nav-search-form__input{
-    padding: 8px;
-    width: calc(100% - 20px);
-    border-radius: 3px;
-    outline: 0;
-    border: 0px;
-    font-size: 0.9em;
-    color: #0a0a0a;
-    // background: #e8e7e7;
-}
-mat-sidenav-container{
-    background: transparent;
-    z-index: unset;
-}
-mat-sidenav-content{
-    margin-bottom: 50px;
-    margin-top: 50px;
 }
 .mat-toolbar{
     padding: unset;
@@ -92,6 +37,76 @@ mat-sidenav-content{
     margin: 0;
     padding: 0;
 }
+.example-fill-remaining-space{
+    flex: 1 1 auto;
+}
+.nav-search-form__input{
+    padding: 8px;
+    width: calc(100% - 20px);
+    border-radius: 3px;
+    outline: 0;
+    border: 0px;
+    font-size: 0.9em;
+    color: #0a0a0a;
+    // background: #e8e7e7;
+}
+// .container{
+//     display: flex;
+//     // grid-template-columns: auto auto auto;
+//     max-width: 1200px;
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 100%;
+// }
+// .container-two{
+//     display: grid;
+//     grid-template-columns: 1fr 1fr ;
+//     width: 100%;
+//     max-width: 800px;
+//     grid-gap: 15px;
+//     margin-top: 1.75rem;
+// }
+// .container-three{
+//     display: grid;
+//     grid-template-columns: 1fr;
+//     width: 100%;
+//     max-width: 400px;
+//     margin-left: auto
+// }
+// .post-tile{
+//     position: relative;
+//     background: #cccccc;
+//     display: block;
+//     height: 25.875rem;
+//     margin-bottom: 1.75rem;
+//     width: 100%;
+// }
+// .post-tile-image{
+//     background-image: url('../../../assets/soccer.jpg');
+//     width: 100%;
+//     height: 13.5rem;
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     position: relative;
+// }
+// .post-tile-content{
+//     // height: 40%;
+//     font-size: 1.375rem;
+//     line-height: 1.625rem;
+//     padding: 1.25rem 1.25rem 3.5rem;
+//     text-align: center;
+// }
+// .post-tile-content h3{
+//     margin: 0;
+// }
+// .post-title-footer{
+//     position: absolute;
+//     bottom: 0;
+//     height: 2.0rem;
+//     border-top: 1px solid #ecf1f0;
+//     width: 100%;
+// }
 .container{
     max-width: 1000px;
     margin-left: auto;
@@ -139,7 +154,15 @@ mat-sidenav-content{
     text-decoration: underline;
     color: blue !important;
 }
-@media only screen and (min-width: 320px) and (max-width: 479px) {
+mat-sidenav-container{
+    background: transparent;
+    z-index: unset;
+}
+mat-sidenav-content{
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+@media only screen and (min-width: 320px) and (max-width: 479px){
     .container{
         display: grid;
         grid-template-columns: 1fr;

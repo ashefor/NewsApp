@@ -13,6 +13,8 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
 import { SportsComponent } from './components/sports/sports.component';
 import { PageLoaderService } from './services/page-loader.service';
 import { LoaderInterceptor } from './interceptors/pageLoader.interceptor';
+import { MainpageComponent } from './components/mainpage/mainpage.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { LoaderInterceptor } from './interceptors/pageLoader.interceptor';
     AppComponent,
     HomepageComponent,
     routecomponents,
-    SportsComponent
+    SportsComponent,
+    MainpageComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,

@@ -26,6 +26,12 @@ export class NewsapiService {
   getAllSportsNews(page){
     return this.http.get(`${this.url}/v2/everything?domains=foxsports.com,bleacherreport.com&pageSize=15&page=${page}&language=en&apikey=${this.apikey}`)
   }
+  loadEverything(whattofind, sortItemsBy){
+    return this.http.get(`${this.url}/v2/everything?q=${whattofind}&sortBy=${sortItemsBy}&language=en&apikey=${this.apikey}`)
+  }
+  testload(whattofind, sortItemsBy, page){
+    return this.http.get(`${this.url}/v2/everything?q=${whattofind}&sortBy=${sortItemsBy}&pageSize=20&page=${page}&language=en&apikey=${this.apikey}`)
+  }
   // returnFirstPage(){
   //   return this.http.get(`${this.url}/v2/top-headlines?country=ng&pageSize=10&page=1&apikey=${this.apikey}`)
   // }
