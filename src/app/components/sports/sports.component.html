@@ -1,8 +1,3 @@
-<!-- <div *ngFor="let news of allnews">
-  <div>
-    {{news.category}}
-  </div>
-</div> -->
 <div id="page-container">
   <div class="mainheader">
     <mat-toolbar role="heading" class="header">
@@ -17,18 +12,17 @@
       </div>
       <span class="example-fill-remaining-space"></span>
       <form method="get" action="/search" accept-charset="UTF-8">
-        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search" autocomplete="off" aria-label="search">
+        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search"
+          autocomplete="off" aria-label="search">
       </form>
     </mat-toolbar>
   </div>
   <div class="mobile_scrn_spinner" *ngIf="mobileSpinner">
-      <i class="fas fa-spinner fa-spin"></i>
-    </div>
+    <i class="fas fa-spinner fa-spin"></i>
+  </div>
   <mat-sidenav-container>
-    <mat-sidenav #sidenav class="sidenav" 
-    [fixedInViewport]="fixedInViewport" 
-    [fixedTopGap]="fixedTopGap"
-    [fixedBottomGap]="fixedBottomGap">
+    <mat-sidenav #sidenav class="sidenav" [fixedInViewport]="fixedInViewport" [fixedTopGap]="fixedTopGap"
+      [fixedBottomGap]="fixedBottomGap">
       <mat-nav-list role="list">
         <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
         <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
@@ -43,24 +37,24 @@
         </div>
         <div *ngFor="let sport of allSportnews" class="items animated bounceInLeft">
           <div class="news-card">
-              <div class="img-container" [ngStyle]="{'background-image': 'url('+sport.urlToImage+')'}">
-                  <!-- <img src="{{sport.urlToImage}}" alt=""  class="responsive"> -->
-                </div>
-                <div class="news-description">
-                  <div>
-                      <a href="{{sport.url}}" target="_blank">
-                          <p>
-                              {{sport.title}}
-                            </p>
-                      </a>
-                  </div>
-                  
-                </div>
+            <div class="img-container" [ngStyle]="{'background-image': 'url('+sport.urlToImage+')'}">
+              <!-- <img src="{{sport.urlToImage}}" alt=""  class="responsive"> -->
+            </div>
+            <div class="news-description">
+              <div>
+                <a href="{{sport.url}}" target="_blank">
+                  <p>
+                    {{sport.title}}
+                  </p>
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
       </div>
-      <mat-paginator *ngIf="showPaginator" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25]"
-        (page)="PageEvent=paginator($event)">
+      <mat-paginator *ngIf="showPaginator" [length]="length" [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 20, 25, 50]" (page)="PageEvent=paginator($event)">
       </mat-paginator>
     </mat-sidenav-content>
   </mat-sidenav-container>

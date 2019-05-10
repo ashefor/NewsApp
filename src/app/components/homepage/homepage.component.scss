@@ -122,15 +122,12 @@ mat-sidenav-content{
     display: none;
 }
 mat-paginator{
-    width: 1000px;
+    width: 100%;
 }
-@media only screen and (min-width: 320px) and (max-width: 479px) {
-    .container{
-        // display: grid;
-        // grid-template-columns: 1fr;
-        // grid-template-rows: 1fr;
-        // grid-gap: 10px;
-    }
+:host ::ng-deep.mat-paginator .mat-paginator-container{
+    justify-content: center;
+}
+@media only screen and (max-width: 479px) {
     .sidenav{
         width: 50%
     }
@@ -183,6 +180,123 @@ mat-paginator{
         position: absolute;
         top: 50%;
         left: 50%;
+    }
+    mat-paginator{
+        width: 100%;
+    }
+    :host ::ng-deep.mat-paginator .mat-paginator-container{
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 480px) and (max-width: 767px){
+    .nav-menu-links{
+        display: none;
+    }
+    .menubtn{
+        display: block
+    }
+    .mainheader{
+        max-width: 100%;
+    }
+    #page-container{
+        margin: 0 auto !important;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .overlay{
+        display: none;
+    }
+    .spinner{
+        display: none;
+    }
+    .mobile_scrn_spinner{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    .sidenav{
+        width: 50%
+    }
+    .sidenav mat-list-item{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .items{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav-search-form__input{
+        width: calc(100% - 25px)
+    }
+    #footer{
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        // position: absolute;
+        bottom: 0;
+        height: 2.5rem; 
+    }
+    mat-paginator{
+        width: 100%;
+    }
+    :host ::ng-deep.mat-paginator .mat-paginator-container{
+        justify-content: center;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .nav-menu-links{
+        display: none;
+    }
+    .menubtn{
+        display: block
+    }
+    .mainheader{
+        max-width: 100%;
+    }
+    #page-container{
+        margin: 0 auto !important;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .overlay{
+        display: none;
+    }
+    .spinner{
+        display: none;
+    }
+    .mobile_scrn_spinner{
+        display: block;
+        position: absolute;
+        font-size: 150%;
+        top: 50%;
+        left: 50%;
+    }
+    .sidenav{
+        width: 30%
+    }
+    .sidenav mat-list-item{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .items{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .nav-search-form__input{
+        width: calc(100% - 35px)
+    }
+    #footer{
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        // position: absolute;
+        bottom: 0;
+        height: 2.5rem; 
     }
     mat-paginator{
         width: 100%;

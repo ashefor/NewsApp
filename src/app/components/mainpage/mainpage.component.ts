@@ -11,7 +11,9 @@ export class MainpageComponent implements OnInit {
   q: string;
   sortedBy: string;
   searcharticles: any[]= [];
-  pagecount = 1;
+  page = 1;
+  pageSize = 20;
+  length;
   fixedInViewport = true;
   fixedTopGap = 0;
   fixedBottomGap = 0;
@@ -19,6 +21,8 @@ export class MainpageComponent implements OnInit {
   pageloader = true;
   color = 'primary';
   mode = 'indeterminate';
+  mobileSpinner =  true;
+  showPaginator = false;
 
   constructor(private route: ActivatedRoute, private service: NewsapiService) { }
 
@@ -30,20 +34,27 @@ export class MainpageComponent implements OnInit {
       console.log(this.q)
       
     })
-    this.service.testload(this.q, this.sortedBy, this.pagecount).subscribe((res:any)=>{
+    this.service.loadSearchResults(this.q, this.sortedBy, this.pageSize, this.page).subscribe((res:any)=>{
       this.searcharticles = res.articles
       this.pageloader = false;
+      this.mobileSpinner = false;
+      this.showPaginator = true;
+      this.length = res.totalResults;
       console.log(this.searcharticles)
     })
   }
 
-
-  onScrollDown(){
-    this.pagecount++
-    this.service.testload(this.q, this.sortedBy, this.pagecount).subscribe((res:any)=>{
-      this.searcharticles = this.searcharticles.concat(res.articles)
-      console.log(this.searcharticles.length)
+  paginator(event){
+    console.log(event)
+    const pageIndex = event.pageIndex+1;
+    const pageSize = event.pageSize;
+    console.log(pageIndex)
+    this.mobileSpinner = true;
+    this.service.loadSearchResults(this.q, this.sortedBy, pageSize, pageIndex).subscribe((res: any)=>{
+      this.searcharticles = res.articles;
+      this.mobileSpinner = false;
+      console.log(this.searcharticles)
     })
-    console.log('scrolled')
   }
+
 }

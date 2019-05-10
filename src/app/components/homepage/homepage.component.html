@@ -15,15 +15,7 @@
         <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search"
           autocomplete="off" aria-label="search">
       </form>
-      <!-- <button mat-button type="submit">
-        <input type="text">
-        <mat-icon>search</mat-icon>
-      </button> -->
     </mat-toolbar>
-    <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
-          <button mat-menu-item> Settings </button>
-          <button mat-menu-item> Help </button>
-        </mat-menu> -->
   </div>
   <div class="mobile_scrn_spinner" *ngIf="mobileSpinner">
     <i class="fas fa-spinner fa-spin"></i>
@@ -37,22 +29,18 @@
         <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
-
-
     <mat-sidenav-content role="main">
       <div class="container">
         <div class="overlay" *ngIf="pageloader">
           <mat-progress-spinner class="spinner" [color]="color" [mode]="mode">
           </mat-progress-spinner>
         </div>
-
         <div class="allnews">
           <mat-card *ngFor="let articles of nigerianArticles" class="items animated bounceInLeft">
             <mat-card-header>
               <mat-card-title>{{articles.title}}</mat-card-title>
               <mat-card-subtitle>{{articles.source.name}}</mat-card-subtitle>
             </mat-card-header>
-
             <mat-card-actions class="card-action-btns" [align]="align">
               <button mat-button>LIKE</button>
               <button mat-button>SHARE</button>

@@ -29,8 +29,8 @@ export class NewsapiService {
   loadEverything(whattofind, sortItemsBy){
     return this.http.get(`${this.url}/v2/everything?q=${whattofind}&sortBy=${sortItemsBy}&language=en&apikey=${this.apikey}`)
   }
-  testload(whattofind, sortItemsBy, page){
-    return this.http.get(`${this.url}/v2/everything?q=${whattofind}&sortBy=${sortItemsBy}&pageSize=20&page=${page}&language=en&apikey=${this.apikey}`)
+  loadSearchResults(whattofind, sortItemsBy, pageSize, page){
+    return this.http.get(`${this.url}/v2/everything?q=${whattofind}&sortBy=${sortItemsBy}&pageSize=${pageSize}&page=${page}&language=en&apikey=${this.apikey}`)
   }
   // returnFirstPage(){
   //   return this.http.get(`${this.url}/v2/top-headlines?country=ng&pageSize=10&page=1&apikey=${this.apikey}`)

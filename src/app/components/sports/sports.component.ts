@@ -14,7 +14,7 @@ export class SportsComponent implements OnInit {
   endofpage = false;
   pageloader = true;
   page = 1;
-  pageSize = 10;
+  pageSize = 20;
   length;
   color = 'primary';
   mode = 'indeterminate';
@@ -61,8 +61,10 @@ export class SportsComponent implements OnInit {
     const pageIndex = event.pageIndex+1;
     const pageSize = event.pageSize;
     console.log(pageIndex)
+    this.mobileSpinner = true;
     this.service.getAllSportsNews(pageIndex, pageSize).subscribe((res: any)=>{
       this.allSportnews = res.articles;
+      this.mobileSpinner = false;
       console.log(this.allSportnews)
     })
   }

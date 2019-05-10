@@ -47,9 +47,11 @@ export class HomepageComponent implements OnInit {
     console.log(event)
     const pageIndex = event.pageIndex+1;
     const pageSize = event.pageSize;
-    console.log(pageIndex)
+    console.log(pageIndex);
+    this.mobileSpinner = true;
     this.service.getTopHeadlinesFromNig(pageIndex, pageSize).subscribe((res: any)=>{
       this.nigerianArticles = res.articles;
+      this.mobileSpinner = false;
       console.log(this.nigerianArticles)
     })
   }

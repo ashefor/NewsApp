@@ -1,4 +1,4 @@
-<div>
+<div id="page-container">
   <div class="mainheader">
     <mat-toolbar role="heading" class="header">
       <button mat-button class="menubtn" (click)="sidenav.open()">
@@ -12,116 +12,60 @@
       </div>
       <span class="example-fill-remaining-space"></span>
       <form method="get" action="/search" accept-charset="UTF-8">
-        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search" autocomplete="off" aria-label="search">
+        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search"
+          autocomplete="off" aria-label="search">
       </form>
     </mat-toolbar>
-    <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
-          <button mat-menu-item> Settings </button>
-          <button mat-menu-item> Help </button>
-        </mat-menu> -->
+  </div>
+
+  <div class="mobile_scrn_spinner" *ngIf="mobileSpinner">
+    <i class="fas fa-spinner fa-spin"></i>
   </div>
   <mat-sidenav-container>
-      <mat-sidenav #sidenav class="sidenav" 
-      [fixedInViewport]="fixedInViewport" 
-      [fixedTopGap]="fixedTopGap"
+    <mat-sidenav #sidenav class="sidenav" [fixedInViewport]="fixedInViewport" [fixedTopGap]="fixedTopGap"
       [fixedBottomGap]="fixedBottomGap">
-        <mat-nav-list role="list">
-          <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
-          <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
-          <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
-        </mat-nav-list>
-      </mat-sidenav>
-      <mat-sidenav-content role="main">
-          <!-- <div>
-              <input #box (keyup)="onKey($event)">
-              <select name="" id="" (click)="selectoption($event)" >
-                <option value="relevancy">Relevancy</option>
-                <option value="popularity">Popularity</option>
-                <option value="publishedAt">New First</option>
-              </select>
-              <button (click)="search()" value=[whattofind]>Search</button>
-            </div> -->
-        <div class="container" infinite-scroll (scrolled)="onScrollDown()">
-          <div class="overlay" *ngIf="pageloader">
-            <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
-            </mat-progress-spinner>
-          </div>
-          <div *ngFor="let search of searcharticles" class="items animated bounceInLeft">
-            <div class="news-card">
-                <div class="img-container" [ngStyle]="{'background-image': 'url('+search.urlToImage+')'}">
-                    <!-- <img src="{{search.urlToImage}}" alt=""  class="responsive"> -->
-                  </div>
-                  <div class="news-description">
-                    <div>
-                        <a href="{{search.url}}" target="_blank">
-                            <p>
-                                {{search.title}}
-                              </p>
-                        </a>
-                    </div>
-                    
-                  </div>
+      <mat-nav-list role="list">
+        <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content role="main">
+      <div class="container">
+        <div class="overlay" *ngIf="pageloader">
+          <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
+          </mat-progress-spinner>
+        </div>
+        <div *ngFor="let search of searcharticles" class="items animated bounceInLeft">
+          <div class="news-card">
+            <div class="img-container" [ngStyle]="{'background-image': 'url('+search.urlToImage+')'}">
             </div>
-            <!-- <div style="margin-top: 20px">
-                <div class="card-action-btns">
-                    <button mat-button>
-                      <mat-icon>favorite</mat-icon>
-                    </button>
-                    <button mat-button>
-                        <mat-icon>share</mat-icon>
-                      </button>
-                  </div>
-            </div> -->
-          </div>
-          <div *ngIf="endofpage">
-            END!!
+            <div class="news-description">
+              <div>
+                <a href="{{search.url}}" target="_blank">
+                  <p>
+                    {{search.title}}
+                  </p>
+                </a>
+              </div>
+
+            </div>
           </div>
         </div>
-      </mat-sidenav-content>
-    </mat-sidenav-container>
-
-
-  <!-- <div class="container" style="background: red">
-    <div class="container-two">
-      <article class="post-tile">
-        <div class="post-tile-image">
-
-        </div>
-        <div class="post-tile-content">
-          <h3>Watch: Ajax's philosophy up to be tested by Son</h3>
-        </div>
-        <footer class="post-title-footer">
-          share post
-        </footer>
-      </article>
-      <article class="post-tile">
-        <div class="post-tile-image">
-
-        </div>
-        <div class="post-tile-content">
-          <h3>Watch: Ajax's philosophy up to be tested by Son</h3>
-        </div>
-        <footer class="post-title-footer">
-          share post
-        </footer>
-      </article>
-    </div>
-    <div class="container-three">
-      <div>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestiae aliquam reprehenderit amet quisquam explicabo iusto atque facilis iste? Aut minus, reprehenderit reiciendis sed fugit libero praesentium doloribus culpa dolorem unde?
       </div>
+      <mat-paginator *ngIf="showPaginator" [length]="length" [pageSize]="pageSize"
+        [pageSizeOptions]="[5, 10, 20, 25, 50]" (page)="PageEvent=paginator($event)">
+      </mat-paginator>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <footer id="footer">
+    <div style="display:flex">
       <div>
-        show me this guy shaaaaa
-        
+        <small>Michael Ashefor. 2019</small>
       </div>
-      <div>
-        show me this guy shaaaaa
-        
-      </div>
-      <div>
-        show me this guy shaaaaa
-        
+      <div style="margin-left:auto">
+        <small>Powered by <a href="https://newsapi.org/">newsapi.org</a></small>
       </div>
     </div>
-  </div> -->
+  </footer>
 </div>
