@@ -93,7 +93,7 @@ mat-sidenav-content{
     padding: 0;
 }
 .allnews{
-    margin-bottom: 50px;
+    // margin-bottom: 50px;
 }
 
 .container{
@@ -117,6 +117,12 @@ mat-sidenav-content{
 
 .menubtn{
     display: none
+}
+.mobile_scrn_spinner{
+    display: none;
+}
+mat-paginator{
+    width: 1000px;
 }
 @media only screen and (min-width: 320px) and (max-width: 479px) {
     .container{
@@ -150,10 +156,10 @@ mat-sidenav-content{
         margin-right: auto;
     }
     .allnews{
-        margin-bottom: 50px
+        // margin-bottom: 50px
     }
     #footer{
-        width: 80%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
         // position: absolute;
@@ -171,5 +177,17 @@ mat-sidenav-content{
     }
     .nav-search-form__input{
         width: calc(100% - 35px)
+    }
+    .mobile_scrn_spinner{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    mat-paginator{
+        width: 100%;
+    }
+    :host ::ng-deep.mat-paginator .mat-paginator-container{
+        justify-content: center;
     }
 }

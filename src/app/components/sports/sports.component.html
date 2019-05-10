@@ -20,11 +20,10 @@
         <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search" autocomplete="off" aria-label="search">
       </form>
     </mat-toolbar>
-    <!-- <mat-menu #settingsMenu="matMenu" yPosition="below">
-          <button mat-menu-item> Settings </button>
-          <button mat-menu-item> Help </button>
-        </mat-menu> -->
   </div>
+  <div class="mobile_scrn_spinner" *ngIf="mobileSpinner">
+      <i class="fas fa-spinner fa-spin"></i>
+    </div>
   <mat-sidenav-container>
     <mat-sidenav #sidenav class="sidenav" 
     [fixedInViewport]="fixedInViewport" 
@@ -37,16 +36,7 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content role="main">
-        <!-- <div>
-            <input #box (keyup)="onKey($event)">
-            <select name="" id="" (click)="selectoption($event)" >
-              <option value="relevancy">Relevancy</option>
-              <option value="popularity">Popularity</option>
-              <option value="publishedAt">New First</option>
-            </select>
-            <button (click)="search()" value=[whattofind]>Search</button>
-          </div> -->
-      <div class="container" infinite-scroll (scrolled)="onScrollDown()">
+      <div class="container">
         <div class="overlay" *ngIf="pageloader">
           <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
           </mat-progress-spinner>
@@ -67,21 +57,11 @@
                   
                 </div>
           </div>
-          <!-- <div style="margin-top: 20px">
-              <div class="card-action-btns">
-                  <button mat-button>
-                    <mat-icon>favorite</mat-icon>
-                  </button>
-                  <button mat-button>
-                      <mat-icon>share</mat-icon>
-                    </button>
-                </div>
-          </div> -->
-        </div>
-        <div *ngIf="endofpage">
-          END!!
         </div>
       </div>
+      <mat-paginator *ngIf="showPaginator" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25]"
+        (page)="PageEvent=paginator($event)">
+      </mat-paginator>
     </mat-sidenav-content>
   </mat-sidenav-container>
   <footer id="footer">

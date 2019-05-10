@@ -12,7 +12,8 @@
       </div>
       <span class="example-fill-remaining-space"></span>
       <form method="get" action="/search" accept-charset="UTF-8">
-        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search" autocomplete="off" aria-label="search">
+        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search"
+          autocomplete="off" aria-label="search">
       </form>
       <!-- <button mat-button type="submit">
         <input type="text">
@@ -24,11 +25,12 @@
           <button mat-menu-item> Help </button>
         </mat-menu> -->
   </div>
+  <div class="mobile_scrn_spinner" *ngIf="mobileSpinner">
+    <i class="fas fa-spinner fa-spin"></i>
+  </div>
   <mat-sidenav-container>
-    <mat-sidenav #sidenav class="sidenav" 
-    [fixedInViewport]="fixedInViewport" 
-    [fixedTopGap]="fixedTopGap"
-    [fixedBottomGap]="fixedBottomGap">
+    <mat-sidenav #sidenav class="sidenav" [fixedInViewport]="fixedInViewport" [fixedTopGap]="fixedTopGap"
+      [fixedBottomGap]="fixedBottomGap">
       <mat-nav-list role="list">
         <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
         <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
@@ -36,8 +38,9 @@
       </mat-nav-list>
     </mat-sidenav>
 
+
     <mat-sidenav-content role="main">
-      <div class="container" infinite-scroll (scrolled)="onScrollDown()">
+      <div class="container">
         <div class="overlay" *ngIf="pageloader">
           <mat-progress-spinner class="spinner" [color]="color" [mode]="mode">
           </mat-progress-spinner>
@@ -58,7 +61,9 @@
           </mat-card>
         </div>
       </div>
-
+      <mat-paginator *ngIf="showPaginator" [length]="length" [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 25]"
+        (page)="PageEvent=paginator($event)">
+      </mat-paginator>
     </mat-sidenav-content>
 
   </mat-sidenav-container>

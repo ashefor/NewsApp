@@ -10,6 +10,8 @@ import { NewsapiService } from 'src/app/services/newsapi.service';
 export class HomepageComponent implements OnInit {
   nigerianArticles: any[] = [];
   page = 1;
+  pageSize = 10;
+  length;
   color = 'primary';
   mode = 'indeterminate';
   pageloader = true;
@@ -17,41 +19,38 @@ export class HomepageComponent implements OnInit {
   fixedInViewport = true;
   fixedTopGap = 0;
   fixedBottomGap = 0;
+  mobileSpinner = true;
+  showPaginator = false;
 
   
   constructor(private service:NewsapiService,) { }
 
   ngOnInit() {
-    this.fetchAllNewsFromNig()
+    this.fetchAllNewsFromNig(this.page, this.pageSize)
     // this.sample()
   }
 
   
-  fetchAllNewsFromNig(page = 1){
-    this.service.getTopHeadlinesFromNig(page).subscribe((res:any)=>{
+  fetchAllNewsFromNig(page, pageSize){
+    this.service.getTopHeadlinesFromNig(page, pageSize).subscribe((res:any)=>{
       this.nigerianArticles = res.articles;
       this.pageloader = false;
+      this.mobileSpinner = false;
+      this.showPaginator = true;
         console.log(this.nigerianArticles)
+        this.length = res.totalResults;
+      console.log(this.length)
       })
   }
-  onScrollDown() {
-    this.page++;
-    this.service.getTopHeadlinesFromNig(this.page).subscribe((res: any)=>{
-      if(this.nigerianArticles.length === 90){
-        // do something. I'll come back to it
-      }
-      else{
-        this.nigerianArticles = this.nigerianArticles.concat(res.articles)
-        console.log(this.nigerianArticles)
-        console.log(this.nigerianArticles.length)
-      }
+  
+  paginator(event){
+    console.log(event)
+    const pageIndex = event.pageIndex+1;
+    const pageSize = event.pageSize;
+    console.log(pageIndex)
+    this.service.getTopHeadlinesFromNig(pageIndex, pageSize).subscribe((res: any)=>{
+      this.nigerianArticles = res.articles;
+      console.log(this.nigerianArticles)
     })
-    console.log('scrolled')
   }
-
-  // sample(){
-  //   this.service.testapi().subscribe((res: any)=>{
-  //     this.nigerianArticles = res.data
-  //   })
-  // }
 }

@@ -17,14 +17,14 @@ export class NewsapiService {
   testapi(){
     return this.http.get('https://reqres.in/api/users?page=2')
   }
-  getTopHeadlinesFromNig(page){
-    return this.http.get(`${this.url}/v2/top-headlines?country=ng&pageSize=10&page=${page}&apikey=${this.apikey}`)
+  getTopHeadlinesFromNig(page, pageSize){
+    return this.http.get(`${this.url}/v2/top-headlines?country=ng&pageSize=${pageSize}&page=${page}&apikey=${this.apikey}`)
   }
   getAllSportsCategorySources(){
     return this.http.get(`${this.url}/v2/sources?category=sports&language=en&apikey=${this.apikey}`)
   }
-  getAllSportsNews(page){
-    return this.http.get(`${this.url}/v2/everything?domains=foxsports.com,bleacherreport.com&pageSize=15&page=${page}&language=en&apikey=${this.apikey}`)
+  getAllSportsNews(page, pageSize){
+    return this.http.get(`${this.url}/v2/everything?domains=foxsports.com,bleacherreport.com&pageSize=${pageSize}&page=${page}&language=en&apikey=${this.apikey}`)
   }
   loadEverything(whattofind, sortItemsBy){
     return this.http.get(`${this.url}/v2/everything?q=${whattofind}&sortBy=${sortItemsBy}&language=en&apikey=${this.apikey}`)

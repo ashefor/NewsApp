@@ -14,11 +14,15 @@ export class SportsComponent implements OnInit {
   endofpage = false;
   pageloader = true;
   page = 1;
+  pageSize = 10;
+  length;
   color = 'primary';
   mode = 'indeterminate';
   fixedInViewport = true;
   fixedTopGap = 0;
   fixedBottomGap = 0;
+  mobileSpinner = true;
+  showPaginator = false;
   whattofind;
   newsearcharray: any[] = [];
   sortItemsBy;
@@ -27,69 +31,39 @@ export class SportsComponent implements OnInit {
 
   ngOnInit() {
     this.fetchNews()
-    this.fetchSports()
+    this.fetchSports(this.page, this.pageSize)
     // this.fetchAll()
   }
 
   fetchNews(){
     this.service.getAllSportsCategorySources().subscribe((res: any)=>{
       this.allnews = res.sources;
-      // console.log(this.allnews)
-      // console.log(res.status)
     })
   }
-  fetchSports(page = 1){
-    this.service.getAllSportsNews(page).subscribe((res:any)=>{
+  fetchSports(page, pageSize){
+    this.service.getAllSportsNews(page, pageSize).subscribe((res:any)=>{
       if(res.status === 'ok'){
         this.allSportnews = res.articles;
+        this.length = res.totalResults;
         this.pageloader = false;
-        // console.log(res.totalResults)
-        // console.log(this.allSportnews.length)
+        this.mobileSpinner = false;
+        this.showPaginator = true;
         console.log(this.allSportnews)
       }
     })
-  }
-  onScrollDown() {
-    this.page++;
-    // this.getHouses(this.page);
-    // this.fetchSports(this.page)
-    this.service.getAllSportsNews(this.page).subscribe((res: any)=>{
-      if(this.allSportnews.length === 90){
-        // alert('End of Page')
-        this.endofpage =  true;
-      }
-      else{
-        this.allSportnews = this.allSportnews.concat(res.articles)
-        console.log(this.allSportnews)
-        console.log(this.allSportnews.length)
-      }
-    })
-
-    console.log('scrolled')
-  }
-  // fetchAll(){
-  //   this.service.loadEverything(this.whattofind, this.sortItemsBy).subscribe((res:any)=>{
-  //     console.log(res)
-  //     console.log('everything')
-  //   })
-  // }
-  search(){
-    // this.service.loadEverything(this.whattofind, this.sortItemsBy).subscribe((res:any)=>{
-    //   this.allSportnews = res.articles
-    //   // console.log('everything')
-    //   console.log(this.whattofind)
-    //   console.log(this.newsearcharray);
-    //   this.router.navigate(['/search'], {queryParams: {q: this.whattofind}})
-    // })
-    this.router.navigate(['/search'], {queryParams: {q: this.whattofind, sortBy: this.sortItemsBy}})
-  }
-  onKey(event){
-    
-    this.whattofind = event.target.value;
-    // console.log(this.whattofind)
   }
   selectoption(event){
     this.sortItemsBy = event.target.value;
     console.log(this.sortItemsBy)
+  }
+  paginator(event){
+    console.log(event)
+    const pageIndex = event.pageIndex+1;
+    const pageSize = event.pageSize;
+    console.log(pageIndex)
+    this.service.getAllSportsNews(pageIndex, pageSize).subscribe((res: any)=>{
+      this.allSportnews = res.articles;
+      console.log(this.allSportnews)
+    })
   }
 }

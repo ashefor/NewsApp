@@ -139,6 +139,12 @@ mat-sidenav-content{
     text-decoration: underline;
     color: blue !important;
 }
+.mobile_scrn_spinner{
+    display: none;
+}
+mat-paginator{
+    width: 1000px;
+}
 @media only screen and (min-width: 320px) and (max-width: 479px) {
     .container{
         display: grid;
@@ -195,7 +201,7 @@ mat-sidenav-content{
         margin-top: unset;
     }
     #footer{
-        width: 80%;
+        width: 90%;
         margin-left: auto;
         margin-right: auto;
         // position: absolute;
@@ -204,5 +210,17 @@ mat-sidenav-content{
     }
     .nav-search-form__input{
         width: calc(100% - 35px)
+    }
+    .mobile_scrn_spinner{
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+    }
+    mat-paginator{
+        width: 100%;
+    }
+    :host ::ng-deep.mat-paginator .mat-paginator-container{
+        justify-content: center;
     }
 }
