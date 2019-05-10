@@ -1,5 +1,6 @@
 # Newsapp
 This project was powered by [NewsApi](https://newsapi.org). So because it is the free plan, the api calls are limited and therefore search results are limited to 100 at most. 
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6. and majority of the appearance is with little Angular Material
 
 ## Development server
