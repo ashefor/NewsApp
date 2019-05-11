@@ -299,3 +299,47 @@ mat-paginator{
         justify-content: center;
     }
 }
+@media only screen and (min-width: 992px) and (max-width: 1250px){
+    .mat-toolbar{
+        padding: 15px;
+    }
+    #page-container{
+        margin: 0 auto !important;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    mat-sidenav-container{
+        padding: 15px
+    }
+    #footer{
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        // position: absolute;
+        bottom: 0;
+        height: 2.5rem; 
+    }
+    .nav-search-form__input{
+        width: calc(100% - 15px)
+    }
+    mat-paginator{
+        width: 100%;
+    }
+    .mobile_scrn_spinner{
+        display: block;
+        position: absolute;
+        font-size: 200%;
+        top: 50%;
+        left: 50%;
+    }
+    .spinner{
+        display:none;
+    }
+    .overlay{
+        display: none;
+    }
+    :host ::ng-deep.mat-paginator .mat-paginator-container{
+        justify-content: center;
+    }
+}

@@ -6,7 +6,7 @@
       </button>
       <div class="nav-menu-links">
         <a class="nav-menu-links_link" href="">Home</a>
-        <a class="nav-menu-links_link" href="">News around the globe</a>
+        <a class="nav-menu-links_link" href="">News from Nigeria</a>
         <a class="nav-menu-links_link" href="/sports">Sports</a>
         <a class="nav-menu-links_link" href="">Entertainment</a>
       </div>
@@ -31,12 +31,27 @@
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content role="main">
+        <div class="sortItems">
+          <div class="sortitems_description">
+            <span>
+              Sort Items by:&nbsp; 
+            </span>
+          </div>
+            <div>
+                <select name="" id="" (change)="sortItems($event)">
+                    <option value="relevancy" selected>Relevancy</option>
+                    <option value="popularity">Popularity</option>
+                    <option value="publishedAt">Newest</option>
+                  </select>
+            </div>
+          </div>
       <div class="container">
         <div class="overlay" *ngIf="pageloader">
           <mat-progress-spinner class="spinner" [color]="color" [mode]="mode" [value]="value">
           </mat-progress-spinner>
         </div>
         <div *ngFor="let search of searcharticles" class="items animated bounceInLeft">
+          <a href="{{search.url}}" target="_blank" class="link-card">
           <div class="news-card">
             <div class="img-container" [ngStyle]="{'background-image': 'url('+search.urlToImage+')'}">
             </div>
@@ -51,6 +66,7 @@
 
             </div>
           </div>
+          </a>
         </div>
       </div>
       <mat-paginator *ngIf="showPaginator" [length]="length" [pageSize]="pageSize"

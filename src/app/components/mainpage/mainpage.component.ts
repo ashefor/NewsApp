@@ -13,6 +13,7 @@ export class MainpageComponent implements OnInit {
   searcharticles: any[]= [];
   page = 1;
   pageSize = 20;
+  pageIndex: number;
   length;
   fixedInViewport = true;
   fixedTopGap = 0;
@@ -46,15 +47,24 @@ export class MainpageComponent implements OnInit {
 
   paginator(event){
     console.log(event)
-    const pageIndex = event.pageIndex+1;
-    const pageSize = event.pageSize;
-    console.log(pageIndex)
+    this.pageIndex = event.pageIndex+1;
+    this.pageSize = event.pageSize;
+    console.log(this.pageIndex)
+    console.log(this.pageSize)
     this.mobileSpinner = true;
-    this.service.loadSearchResults(this.q, this.sortedBy, pageSize, pageIndex).subscribe((res: any)=>{
+    this.service.loadSearchResults(this.q, this.sortedBy, this.pageSize, this.pageIndex).subscribe((res: any)=>{
       this.searcharticles = res.articles;
       this.mobileSpinner = false;
       console.log(this.searcharticles)
     })
   }
-
+  sortItems(event){
+    this.sortedBy = event.target.value;
+    this.service.loadSearchResults(this.q, this.sortedBy, this.pageSize, this.pageIndex).subscribe((res: any)=>{
+      this.searcharticles = res.articles;
+      this.mobileSpinner = false;
+      console.log(this.searcharticles)
+    })
+    console.log(this.sortedBy)
+  }
 }

@@ -6,7 +6,7 @@
       </button>
       <div class="nav-menu-links">
         <a class="nav-menu-links_link" href="">Home</a>
-        <a class="nav-menu-links_link" href="">News around the globe</a>
+        <a class="nav-menu-links_link" href="">News from Nigeria</a>
         <a class="nav-menu-links_link" href="/sports">Sports</a>
         <a class="nav-menu-links_link" href="">Entertainment</a>
       </div>
@@ -36,6 +36,7 @@
           </mat-progress-spinner>
         </div>
         <div *ngFor="let sport of allSportnews" class="items animated bounceInLeft">
+          <a href="{{sport.url}}" target="_blank" class="link-card">
           <div class="news-card">
             <div class="img-container" [ngStyle]="{'background-image': 'url('+sport.urlToImage+')'}">
               <!-- <img src="{{sport.urlToImage}}" alt=""  class="responsive"> -->
@@ -51,6 +52,7 @@
 
             </div>
           </div>
+        </a>
         </div>
       </div>
       <mat-paginator *ngIf="showPaginator" [length]="length" [pageSize]="pageSize"

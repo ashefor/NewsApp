@@ -1,0 +1,81 @@
+.overlay{
+    position: relative;
+    // width: 100%;
+    // padding-right: 15px;
+    // padding-left: 15px;
+    // margin-right: auto;
+    // margin-left: auto;
+    // box-sizing: border-box;
+    background: #70e1f5;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #ffd194, #70e1f5);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    height: 100vh;
+}
+.mat-toolbar{
+    background: inherit;
+}
+.row h1{
+    font-size: 5rem;
+}
+.go_home_icon{
+    width: 50px;
+    height: 50px;
+}
+.landing_page_search{
+    position: absolute;
+    position: fixed;
+  top: 50%;
+  left: 50%;
+  /* bring your own prefixes */
+  transform: translate(-50%, -50%);
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.search_form_text{
+    padding-right: 100px;
+    padding-left: 100px;
+    text-align: center;
+}
+.form_input_btn{
+    display: flex;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.landing_page_form_search{
+    padding: 20px;
+    width: calc(100% - 500px);
+    border-radius: 5px;
+    outline: 0;
+    border: 1px solid black;
+    font-size: 0.9em;
+    color: #0a0a0a;
+    font-size: 3rem;
+}
+input[type="text"].landing_page_form_search::placeholder{
+    // color: red;
+    font-size: 3rem;
+    line-height: 3rem;
+}
+.mainheader{
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#footer{
+    position: absolute;
+    width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    font-weight: 800;
+}
+.middle_search{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 3rem;
+}

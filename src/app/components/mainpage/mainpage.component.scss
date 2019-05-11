@@ -115,9 +115,23 @@
     position: relative;
     // padding: 5px;
 }
+.news-description p{
+    font-family: 'Assistant', sans-serif;
+}
 .news-description a{
     text-decoration: none;
     color: black
+}
+// .news-description a:hover{
+//     text-decoration: underline;
+//     color: black
+// }
+.link-card{
+    text-decoration: none;
+}
+.link-card:hover .news-description p{
+    // text-decoration: underline;
+    color: #adadad;
 }
 .card-action-btns{
     position: absolute;
@@ -136,7 +150,7 @@ mat-sidenav-container{
 }
 mat-sidenav-content{
     margin-bottom: 50px;
-    margin-top: 50px;
+    margin-top: 10px;
 }
 .mobile_scrn_spinner{
     display: none;
@@ -146,6 +160,22 @@ mat-paginator{
 }
 :host ::ng-deep.mat-paginator .mat-paginator-container{
     justify-content: center;
+}
+.sortItems{
+    display: flex;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+}
+.sortitems_description{
+    margin-top: auto;
+    margin-bottom: auto;
+    font-family: 'Stylish', sans-serif;
+}
+.sortItems select{
+    border-radius:5px;
+    padding: 5px;
 }
 @media only screen and (max-width: 479px){
     .container{
@@ -174,6 +204,13 @@ mat-paginator{
     }
     .menubtn{
         display: block
+    }
+    .sortItems{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: unset;
+        margin-top: 5px;
     }
     .img-container{
         width: 100%;
@@ -247,6 +284,13 @@ mat-paginator{
     .news-card{
         display: flex;
     }
+    .sortItems{
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: unset;
+        margin-top: 5px;
+    }
     .img-container{
         width: 100%;
         height: 150px;
@@ -317,6 +361,13 @@ mat-paginator{
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+    }
+    .sortItems{
+        width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: unset;
+        margin-top: 5px;
     }
     .img-container{
         width: 100%;

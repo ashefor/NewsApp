@@ -15,6 +15,7 @@ import { PageLoaderService } from './services/page-loader.service';
 import { LoaderInterceptor } from './interceptors/pageLoader.interceptor';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { LandingpageComponent } from './components/landingpage/landingpage.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     routecomponents,
     SportsComponent,
     MainpageComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    LandingpageComponent
   ],
   imports: [
     BrowserModule,
