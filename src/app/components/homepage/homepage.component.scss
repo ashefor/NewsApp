@@ -133,7 +133,7 @@ mat-paginator{
         margin-bottom: 5px;
     }
     .items{
-        width: 80%;
+        width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -167,7 +167,7 @@ mat-paginator{
         max-width: 100%;
     }
     .nav-search-form__input{
-        width: calc(100% - 35px)
+        width: calc(100% - 20px)
     }
     .mobile_scrn_spinner{
         display: block;
