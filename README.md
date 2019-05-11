@@ -1,6 +1,7 @@
 # Newsapp
+[This project](https://newsheadlines.netlify.com) was sponsored by [NewsApi](https://newsapi.org) and hosted for free on [Netlify](https://www.netlify.com/). So because it is the free plan, the api calls are limited and therefore search results are limited to 100 at most. 
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.6. and the appearance was done with Angular Material
 
 ## Development server
 
