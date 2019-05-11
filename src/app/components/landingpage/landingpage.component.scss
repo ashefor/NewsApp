@@ -100,7 +100,9 @@ input[type="text"].landing_page_form_search::placeholder{
         font-size: 3.5rem;
     }
     #footer{
-        width: 90%;
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     .landing_page_form_search{
         padding: 10px;
