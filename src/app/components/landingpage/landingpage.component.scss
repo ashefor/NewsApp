@@ -78,7 +78,11 @@ input[type="text"].landing_page_form_search::placeholder{
     left: 50%;
     font-size: 3rem;
 }
-@media only screen and (min-width: 320px) and (max-width: 479px){
+@media only screen and (max-width: 479px){
+    .go_home_icon{
+        width: 40px;
+        height: 40px;
+    }
     .overlay{
         width: 100%;
         padding-top: 10px;
@@ -97,7 +101,7 @@ input[type="text"].landing_page_form_search::placeholder{
         margin-right: auto;
     }
     .row h1{
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
     #footer{
         max-width: 100%;
@@ -105,23 +109,23 @@ input[type="text"].landing_page_form_search::placeholder{
         padding-right: 10px;
     }
     .landing_page_form_search{
-        padding: 10px;
+        padding: 5px;
         width: 80%;
         border-radius: 5px;
         outline: 0;
         border: 1px solid black;
         font-size: 0.5em;
         color: #0a0a0a;
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
     input[type="text"].landing_page_form_search::placeholder{
         // color: red;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 1rem;
+        line-height: 1rem;
     }
     .search_form_text{
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 10px;
+        padding-left: 10px;
         text-align: center;
     }
     
