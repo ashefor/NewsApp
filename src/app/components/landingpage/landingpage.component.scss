@@ -110,7 +110,7 @@ input[type="text"].landing_page_form_search::placeholder{
     }
     .landing_page_form_search{
         padding: 5px;
-        width: 80%;
+        width: 30%;
         border-radius: 5px;
         outline: 0;
         border: 1px solid black;
@@ -122,6 +122,160 @@ input[type="text"].landing_page_form_search::placeholder{
         // color: red;
         font-size: 1rem;
         line-height: 1rem;
+    }
+    .search_form_text{
+        padding-right: 10px;
+        padding-left: 10px;
+        text-align: center;
+    }
+    
+}
+@media only screen and (min-width:480px) and (max-width:767px){
+    .go_home_icon{
+        width: 40px;
+        height: 40px;
+    }
+    .overlay{
+        width: 100%;
+        padding-top: 10px;
+    }
+    .mainheader{
+        max-width: 100%;
+    }
+    .landing_page_search{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row h1{
+        font-size: 3.5rem;
+    }
+    #footer{
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .landing_page_form_search{
+        padding: 10px;
+        width: 40%;
+        border-radius: 5px;
+        outline: 0;
+        border: 1px solid black;
+        font-size: 0.5em;
+        color: #0a0a0a;
+        font-size: 1.5rem;
+    }
+    input[type="text"].landing_page_form_search::placeholder{
+        // color: red;
+        font-size: 1.5rem;
+        line-height: 1.5rem;
+    }
+    .search_form_text{
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px){
+    .go_home_icon{
+        width: 40px;
+        height: 40px;
+    }
+    .overlay{
+        width: 100%;
+        padding-top: 10px;
+    }
+    .mainheader{
+        max-width: 100%;
+    }
+    .landing_page_search{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row h1{
+        font-size: 4.5rem;
+    }
+    #footer{
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .landing_page_form_search{
+        padding: 10px;
+        width: 30%;
+        border-radius: 5px;
+        outline: 0;
+        border: 1px solid black;
+        font-size: 0.5em;
+        color: #0a0a0a;
+        font-size: 2.0rem;
+    }
+    input[type="text"].landing_page_form_search::placeholder{
+        // color: red;
+        font-size: 2.0rem;
+        line-height: 2.0rem;
+    }
+    .search_form_text{
+        padding-right: 15px;
+        padding-left: 15px;
+        text-align: center;
+    }
+}
+@media only screen and (min-width: 992px) and (max-width: 1250px){
+    .go_home_icon{
+        width: 40px;
+        height: 40px;
+    }
+    .overlay{
+        width: 100%;
+        padding-top: 10px;
+    }
+    .mainheader{
+        max-width: 100%;
+    }
+    .landing_page_search{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        /* bring your own prefixes */
+        transform: translate(-50%, -50%);
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .row h1{
+        font-size: 4rem;
+    }
+    #footer{
+        max-width: 100%;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .landing_page_form_search{
+        padding: 15px;
+        width: 30%;
+        border-radius: 5px;
+        outline: 0;
+        border: 1px solid black;
+        font-size: 0.5em;
+        color: #0a0a0a;
+        font-size: 3rem;
+    }
+    input[type="text"].landing_page_form_search::placeholder{
+        // color: red;
+        font-size: 3rem;
+        line-height: 3rem;
     }
     .search_form_text{
         padding-right: 10px;
