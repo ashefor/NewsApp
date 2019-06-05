@@ -1,3 +1,60 @@
-<p>
-  pagenotfound works!
-</p>
+
+
+<div id="page-container">
+  <div class="mainheader">
+    <mat-toolbar role="heading" class="header">
+      <button mat-button class="menubtn" (click)="sidenav.open()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <div class="nav-menu-links">
+        <!-- <a class="nav-menu-links_link" href="">Home</a> -->
+        <a class="nav-menu-links_link" href="/ng-news">News around Nigeria</a>
+        <a class="nav-menu-links_link" href="/sports">Sports</a>
+        <a class="nav-menu-links_link" href="/entertainment">Entertainment</a>
+        <a class="nav-menu-links_link" href="/technology">Technology</a>
+      </div>
+      <span class="example-fill-remaining-space"></span>
+      <form method="get" action="/search" accept-charset="UTF-8">
+        <input class="nav-search-form__input" type="text" name="q" id="nav-search" placeholder="search"
+          autocomplete="off" aria-label="search">
+      </form>
+    </mat-toolbar>
+  </div>
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav class="sidenav" [fixedInViewport]="fixedInViewport" [fixedTopGap]="fixedTopGap"
+      [fixedBottomGap]="fixedBottomGap">
+      <mat-nav-list role="list">
+        <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/ng-news">News Around Nigeria</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/entertainment">Entertainment</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/technology">Technology</a></mat-list-item>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content role="main">
+      <div class="containerr">
+        <div id="notfound">
+          <div class="notfound">
+            <div class="notfound-404">
+              <h1>4<span>0</span>4</h1>
+            </div>
+            <h2>the page you requested could not found</h2>
+            <form method="get" action="/search" accept-charset="UTF-8" class="notfound-search">
+              <input type="text" placeholder="Search..." name="q" autocomplete="off" aria-label="search">
+            </form>
+          </div>
+        </div>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <footer id="footer">
+    <div style="display:flex">
+      <div class="author">
+        <small>Michael Ashefor. 2019</small>
+      </div>
+      <div style="margin-left:auto" class="api-source">
+        <small>Powered by <a href="https://newsapi.org/">newsapi.org</a></small>
+      </div>
+    </div>
+  </footer>
+</div>
