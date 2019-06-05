@@ -17,6 +17,9 @@ export class EntertainmentComponent implements OnInit {
   pageloader = true;
   mobileSpinner = true;
   showPaginator = false;
+  fixedInViewport = true;
+  fixedTopGap = 0;
+  fixedBottomGap = 0;
   constructor(private service: NewsapiService) { }
 
   ngOnInit() {

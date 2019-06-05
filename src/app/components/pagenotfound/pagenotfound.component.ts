@@ -9,6 +9,9 @@ import { NewsapiService } from 'src/app/services/newsapi.service';
 })
 export class PagenotfoundComponent implements OnInit {
   q: string;
+  fixedInViewport = true;
+  fixedTopGap = 0;
+  fixedBottomGap = 0;
   constructor(private route: ActivatedRoute, private service: NewsapiService) { }
 
   ngOnInit() {
