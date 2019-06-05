@@ -107,7 +107,6 @@ mat-sidenav-content{
     // align-items: center;
     justify-content: center;	
     grid-template-columns: 1fr;
-    grid-gap: 10px;
 }
 .items{
     max-width: 1200px;
@@ -479,16 +478,10 @@ mat-paginator{
     // background: #f6f6f6;
   }
   
-  #notfound .notfound {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-  }
   
   .notfound {
+    margin-left: auto;
+    margin-right: auto;
     max-width: 767px;
     width: 100%;
     line-height: 1.4;
