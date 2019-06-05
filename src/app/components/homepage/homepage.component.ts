@@ -27,7 +27,6 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit() {
     this.fetchAllNewsFromNig(this.page, this.pageSize)
-    // this.sample()
   }
 
   
@@ -37,22 +36,17 @@ export class HomepageComponent implements OnInit {
       this.pageloader = false;
       this.mobileSpinner = false;
       this.showPaginator = true;
-        console.log(this.nigerianArticles)
         this.length = res.totalResults;
-      console.log(this.length)
       })
   }
   
   paginator(event){
-    console.log(event)
     const pageIndex = event.pageIndex+1;
     const pageSize = event.pageSize;
-    console.log(pageIndex);
     this.mobileSpinner = true;
     this.service.getTopHeadlinesFromNig(pageIndex, pageSize).subscribe((res: any)=>{
       this.nigerianArticles = res.articles;
       this.mobileSpinner = false;
-      console.log(this.nigerianArticles)
     })
   }
 }

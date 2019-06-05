@@ -92,7 +92,10 @@ mat-sidenav-content{
     margin: 0;
     padding: 0;
 }
-.container{
+.active{
+    color: red !important;
+}
+.containerr{
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
@@ -179,7 +182,7 @@ mat-paginator{
     padding: 5px;
 }
 @media only screen and (max-width: 479px) {
-    .container{
+    .containerr{
         display: grid;
         grid-template-columns: 1fr;
         padding: 15px;
@@ -241,6 +244,14 @@ mat-paginator{
         bottom: 0;
         height: 2.5rem; 
     }
+    .author{
+        width: 100%;
+        font-size: x-small
+    }
+    .api-source{
+        width: 100%;
+        font-size: x-small
+    }
     .nav-search-form__input{
         width: calc(100% - 20px)
     }
@@ -264,7 +275,7 @@ mat-paginator{
     .menubtn{
         display: block
     }
-    .container{
+    .containerr{
         display: grid;
         grid-template-columns: 1fr;
         padding: 15px;
@@ -338,7 +349,7 @@ mat-paginator{
     .menubtn{
         display: block
     }
-    .container{
+    .containerr{
         display: grid;
         grid-template-columns: 1fr 1fr;
         padding: 15px;

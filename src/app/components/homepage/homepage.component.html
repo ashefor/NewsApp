@@ -5,10 +5,11 @@
         <mat-icon>menu</mat-icon>
       </button>
       <div class="nav-menu-links">
-        <a class="nav-menu-links_link" href="">Home</a>
-        <a class="nav-menu-links_link" href="">News from Nigeria</a>
+        <!-- <a class="nav-menu-links_link active" href="">Home</a> -->
+        <a class="nav-menu-links_link active" href="/ng-news">News around Nigeria</a>
         <a class="nav-menu-links_link" href="sports">Sports</a>
-        <a class="nav-menu-links_link" href="">Entertainment</a>
+        <a class="nav-menu-links_link" href="/entertainment">Entertainment</a>
+        <a class="nav-menu-links_link" href="/technology">technology</a>
       </div>
       <span class="example-fill-remaining-space"></span>
       <form method="get" action="/search" accept-charset="UTF-8">
@@ -25,8 +26,10 @@
       [fixedBottomGap]="fixedBottomGap">
       <mat-nav-list role="list">
         <mat-list-item role="navigation"><a href="">Home</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/ng-news">News Around Nigeria</a></mat-list-item>
         <mat-list-item role="navigation"><a href="/sports">Sports</a></mat-list-item>
-        <mat-list-item role="navigation"><a href="">Entertainment</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/entertainment">Entertainment</a></mat-list-item>
+        <mat-list-item role="navigation"><a href="/technology">Technology</a></mat-list-item>
       </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content role="main">
@@ -57,10 +60,10 @@
   </mat-sidenav-container>
   <footer id="footer">
     <div style="display:flex">
-      <div>
+      <div class="author">
         <small>Michael Ashefor. 2019</small>
       </div>
-      <div style="margin-left:auto">
+      <div style="margin-left:auto" class="api-source">
         <small>Powered by <a href="https://newsapi.org/">newsapi.org</a></small>
       </div>
     </div>

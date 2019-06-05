@@ -34,7 +34,9 @@
 .example-fill-remaining-space{
     flex: 1 1 auto;
 }
-
+.active{
+    color: red !important;
+}
 .header{
     background: transparent;
     max-width: 1200px;
@@ -156,6 +158,14 @@ mat-paginator{
         // position: absolute;
         bottom: 0;
         height: 2.5rem; 
+    }
+    .author{
+        width: 100%;
+        font-size: x-small
+    }
+    .api-source{
+        width: 100%;
+        font-size: x-small
     }
     .nav-menu-links{
         display: none;

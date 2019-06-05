@@ -29,11 +29,8 @@ export class MainpageComponent implements OnInit {
 
   ngOnInit() {
     this.route.queryParams.subscribe(params =>{
-      console.log(params)
       this.q = params.q;
       this.sortedBy = params.sortBy;
-      console.log(this.q)
-      
     })
     this.service.loadSearchResults(this.q, this.sortedBy, this.pageSize, this.page).subscribe((res:any)=>{
       this.searcharticles = res.articles
@@ -41,21 +38,16 @@ export class MainpageComponent implements OnInit {
       this.mobileSpinner = false;
       this.showPaginator = true;
       this.length = res.totalResults;
-      console.log(this.searcharticles)
     })
   }
 
   paginator(event){
-    console.log(event)
     this.pageIndex = event.pageIndex+1;
     this.pageSize = event.pageSize;
-    console.log(this.pageIndex)
-    console.log(this.pageSize)
     this.mobileSpinner = true;
     this.service.loadSearchResults(this.q, this.sortedBy, this.pageSize, this.pageIndex).subscribe((res: any)=>{
       this.searcharticles = res.articles;
       this.mobileSpinner = false;
-      console.log(this.searcharticles)
     })
   }
   sortItems(event){
@@ -63,8 +55,6 @@ export class MainpageComponent implements OnInit {
     this.service.loadSearchResults(this.q, this.sortedBy, this.pageSize, this.pageIndex).subscribe((res: any)=>{
       this.searcharticles = res.articles;
       this.mobileSpinner = false;
-      console.log(this.searcharticles)
     })
-    console.log(this.sortedBy)
   }
 }

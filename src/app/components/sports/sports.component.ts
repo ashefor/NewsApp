@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, isDevMode } from '@angular/core';
 import { NewsapiService } from 'src/app/services/newsapi.service';
 import { Router } from '@angular/router';
 
@@ -32,7 +32,6 @@ export class SportsComponent implements OnInit {
   ngOnInit() {
     this.fetchNews()
     this.fetchSports(this.page, this.pageSize)
-    // this.fetchAll()
   }
 
   fetchNews(){
@@ -48,24 +47,19 @@ export class SportsComponent implements OnInit {
         this.pageloader = false;
         this.mobileSpinner = false;
         this.showPaginator = true;
-        console.log(this.allSportnews)
       }
     })
   }
   selectoption(event){
     this.sortItemsBy = event.target.value;
-    console.log(this.sortItemsBy)
   }
   paginator(event){
-    console.log(event)
     const pageIndex = event.pageIndex+1;
     const pageSize = event.pageSize;
-    console.log(pageIndex)
     this.mobileSpinner = true;
     this.service.getAllSportsNews(pageIndex, pageSize).subscribe((res: any)=>{
       this.allSportnews = res.articles;
       this.mobileSpinner = false;
-      console.log(this.allSportnews)
     })
   }
 }

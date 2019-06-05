@@ -16,6 +16,8 @@ import { LoaderInterceptor } from './interceptors/pageLoader.interceptor';
 import { MainpageComponent } from './components/mainpage/mainpage.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { LandingpageComponent } from './components/landingpage/landingpage.component';
+import { EntertainmentComponent } from './components/entertainment/entertainment.component';
+import { TechnologyComponent } from './components/technology/technology.component';
 
 
 @NgModule({
@@ -26,7 +28,9 @@ import { LandingpageComponent } from './components/landingpage/landingpage.compo
     SportsComponent,
     MainpageComponent,
     PagenotfoundComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    EntertainmentComponent,
+    TechnologyComponent
   ],
   imports: [
     BrowserModule,
